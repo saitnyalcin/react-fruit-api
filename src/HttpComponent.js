@@ -10,6 +10,7 @@ const HttpComponent = ({
   sugar
 }) => {
   return (
+    // the content of the flex divs
     <div className="flex-container">
       <div>
         <FruitPic image={name} />

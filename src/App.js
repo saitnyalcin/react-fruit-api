@@ -20,6 +20,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
 
+      {/* setting the flex box container */}
       <div className="container">
         {data.map(item => (
           <div key={item.id}>
