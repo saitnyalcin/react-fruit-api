@@ -15,11 +15,36 @@ const HttpComponent = ({
       <div>
         <FruitPic image={name} />
         <h1>{name}</h1>
-        <h3>{carbohydrates}</h3>
-        <h3>{protein}</h3>
-        <h3>{fat}</h3>
-        <h3>{calories}</h3>
-        <h3>{sugar}</h3>
+        <h3>
+          <span role="img" aria-label="carbohydrates">
+            🍞
+          </span>
+          {carbohydrates}
+        </h3>
+        <h3>
+          <span role="img" aria-label="protein">
+            🥚
+          </span>
+          {protein}
+        </h3>
+        <h3>
+          <span role="img" aria-label="fat">
+            🍔
+          </span>
+          {fat}
+        </h3>
+        <h3>
+          <span role="img" aria-label="calories">
+            ⏱
+          </span>
+          {calories}
+        </h3>
+        <h3>
+          <span role="img" aria-label="sugar">
+            🍩
+          </span>
+          {sugar}
+        </h3>
       </div>
     </div>
   );
