@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import HttpComponent from './HttpComponent';
+import FruitCardView from './FruitCardView';
 import logo from './images/fresh-fruit-logo.png';
 
 function App() {
   const [data, setData] = useState([]);
 
+  // set axios data fetch library to retrieve the api data
   useEffect(() => {
     axios
       .get(
@@ -24,7 +25,7 @@ function App() {
       <div className="container">
         {data.map(item => (
           <div key={item.id}>
-            <HttpComponent
+            <FruitCardView
               name={item.name}
               carbohydrates={item.nutritions.carbohydrates}
               protein={item.nutritions.protein}

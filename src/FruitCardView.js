@@ -1,7 +1,7 @@
 import React from 'react';
 import FruitPic from './widgets/FruitPic';
 
-const HttpComponent = ({
+const FruitCardView = ({
   name,
   carbohydrates,
   protein,
@@ -50,4 +50,4 @@ const HttpComponent = ({
   );
 };
 
-export default HttpComponent;
+export default FruitCardView;
