@@ -1,19 +1,27 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import FruitCardView from './FruitCardView';
-import logo from './images/fresh-fruit-logo.png';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import FruitCardView from "./FruitCardView";
+import logo from "./images/fresh-fruit-logo.png";
 
 function App() {
   const [data, setData] = useState([]);
 
-  // set axios data fetch library to retrieve the api data
+  async function callFruitsApi() {
+    await fetch(
+      "https://cors-anywhere.herokuapp.com/http://www.fruityvice.com/api/fruit/all"
+    )
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .then((result) => {
+        console.log("Success:", result);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
+
   useEffect(() => {
-    axios
-      .get(
-        'https://cors-anywhere.herokuapp.com/http://www.fruityvice.com/api/fruit/all'
-      )
-      .then(result => setData(result.data));
+    callFruitsApi();
   }, []);
   return (
     <div className="App">
@@ -23,7 +31,7 @@ function App() {
 
       {/* setting the flex box container */}
       <div className="container">
-        {data.map(item => (
+        {data.map((item) => (
           <div key={item.id}>
             <FruitCardView
               name={item.name}
